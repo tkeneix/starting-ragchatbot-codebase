@@ -54,3 +54,41 @@ The application will be available at:
 - Web Interface: `http://localhost:8000`
 - API Documentation: `http://localhost:8000/docs`
 
+## Testing
+
+The project uses pytest for comprehensive testing with async support.
+
+### Running Tests
+
+```bash
+# Run all tests
+uv run --group test pytest
+
+# Run with coverage
+uv run --group test pytest --cov=backend
+
+# Run specific test file
+uv run --group test pytest tests/test_api.py
+
+# Run specific test class
+uv run --group test pytest tests/test_api.py::TestQueryEndpoint
+
+# Run with verbose output
+uv run --group test pytest -v
+```
+
+### Test Structure
+
+- `tests/test_api.py` - Tests for FastAPI endpoints
+- `tests/test_models.py` - Tests for Pydantic models  
+- `tests/conftest.py` - Shared fixtures and configuration
+
+### Test Coverage
+
+The test suite includes:
+- API endpoint testing with mocking
+- Pydantic model validation testing
+- Async endpoint testing
+- Error handling scenarios
+- Request/response validation
+

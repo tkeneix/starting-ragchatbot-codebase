@@ -9,6 +9,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Manual start**: `cd backend && uv run uvicorn app:app --reload --port 8000`
 - **Install dependencies**: `uv sync`
 
+### Testing
+- **Run tests**: `uv run --group test pytest`
+- **Run tests with coverage**: `uv run --group test pytest --cov=backend`
+- **Run specific test file**: `uv run --group test pytest tests/test_api.py`
+
 ### Environment Setup
 - Requires `.env` file in root with `ANTHROPIC_API_KEY=your_key_here`
 - Python 3.13+ and uv package manager required
